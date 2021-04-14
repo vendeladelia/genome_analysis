@@ -9,5 +9,9 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user vendela.andersson.3023@student.uu.se
 
+# Load modules
+module load bioinfo-tools
+module load quast
+
 # Run quast on genome assembly
-python quast.py -o ~/genome_analysis/analyses/03_assembly_eval_quast/ ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta
+quast.py -o ~/genome_analysis/analyses/03_assembly_eval_quast/ -R ~/genome_analysis/data/reference_genome/GCF_010120755.1_ASM1012075v1_genomic.fna.gz -G ~/genome_analysis/data/reference_genome/GCF_010120755.1_ASM1012075v1_genomic.gff ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta 
