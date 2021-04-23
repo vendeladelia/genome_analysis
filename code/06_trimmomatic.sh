@@ -17,8 +17,8 @@ module load trimmomatic
 java -jar /sw/apps/bioinfo/trimmomatic/0.36/rackham/trimmomatic-0.36.jar PE \
 ~/genome_analysis/data/raw_data/transcriptomics_data/RNA-Seq_BH/trim_paired_ERR1797972_pass_1.fastq.gz \
 ~/genome_analysis/data/raw_data/transcriptomics_data/RNA-Seq_BH/trim_paired_ERR1797972_pass_2.fastq.gz \
-~/genome_analysis/analyses/06_trimmomatic/output_forward_paired.fq.gz \
-~/genome_analysis/analyses/06_trimmomatic/output_forward_unpaired.fq.gz \
-~/genome_analysis/analyses/06_trimmomatic/output_reverse_paired.fq.gz \
-~/genome_analysis/analyses/06_trimmomatic/output_reverse_unpaired.fq.gz \
-ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/rackham/TruSeq3-PE.fa:2:36:10:2:keepBothReads LEADING:3 TRAILING:3 MINLEN:36
+~/genome_analysis/analyses/06_trimmomatic/try_three/output_forward_paired.fq.gz \
+~/genome_analysis/analyses/06_trimmomatic/try_three/output_forward_unpaired.fq.gz \
+~/genome_analysis/analyses/06_trimmomatic/try_three/output_reverse_paired.fq.gz \
+~/genome_analysis/analyses/06_trimmomatic/try_three/output_reverse_unpaired.fq.gz \
+ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/rackham/adapters/TruSeq3-PE.fa:2:30:10:2:keepBothReads LEADING:36 TRAILING:36 MINLEN:36
