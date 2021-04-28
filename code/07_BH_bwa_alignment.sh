@@ -12,6 +12,7 @@
 # Load modules
 module load bioinfo-tools
 module load bwa
+module load samtools
 
 
 # Perform bwa aln alignment on BH
@@ -26,8 +27,8 @@ for i in {2..4}
 do
 	bwa sampe ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta \
 	~/genome_analysis/analyses/07_bwa_alignment/BH_aln/trim_paired_ERR179797${i}* \
-	~/genome_analysis/data/raw_data/transcriptomics_data/RNA-Seq_BH/trim_paired_ERR179797${i}* > \
-	~/genome_analysis/analyses/07_bwa_alignment/BH_sampe/trim_paired_ERR179797${i}.sam
+	~/genome_analysis/data/raw_data/transcriptomics_data/RNA-Seq_BH/trim_paired_ERR179797${i}* \
+	| samtools sort -o ~/genome_analysis/analyses/07_bwa_alignment/BH_sampe/bwa_aligned_ERR179797${i}.bam
 done
 
 
