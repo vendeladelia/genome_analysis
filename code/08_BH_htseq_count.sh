@@ -15,13 +15,13 @@ module load htseq
 module load samtools
 
 # Create bam index for bam-files
-for i in ~/genome_analysis/analyses/07_bwa_alignment/BH_sampe/*.bam
-do
-	samtools index $i ${i}.bai
-done
+#for i in ~/genome_analysis/analyses/07_bwa_alignment/BH_sampe/*.bam
+#do
+#	samtools index $i ${i}.bai
+#done
 
 # Run HTSeq
-cd ~/genome_analysis/analyses/08_htseq_count/
-htseq-count -f bam -r pos \
+htseq-count -f bam -r pos -i ID -t CDS \
 ~/genome_analysis/analyses/07_bwa_alignment/BH_sampe/*.bam \
-~/genome_analysis/analyses/04_annotation_prokka/annotation_trim.gff
+~/genome_analysis/analyses/04_annotation_prokka/annotation_trim.gff \
+> ~/genome_analysis/analyses/08_htseq_count/BH_htseq_count.txt
