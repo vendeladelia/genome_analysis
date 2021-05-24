@@ -14,4 +14,6 @@ module load bioinfo-tools
 module load blast
 
 # Run quast on genome assembly
-blastn -subject ~/genome_analysis/data/related_genome/GCF_000393015.1_Ente_faec_T5_V1_genomic.fna -query ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta -out ~/genome_analysis/analyses/05_synteny_blastn/synteny_blastn.out
+#blastn -subject ~/genome_analysis/data/related_genome/GCF_000393015.1_Ente_faec_T5_V1_genomic.fna -query ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta -out ~/genome_analysis/analyses/05_synteny_blastn/synteny_blastn.html -html
+#blastn -outfmt 6 -subject ~/genome_analysis/data/related_genome/GCF_000393015.1_Ente_faec_T5_V1_genomic.fna -query ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta -out ~/genome_analysis/analyses/05_synteny_blastn/synteny_blastn.tab
+blastn -outfmt 6 -subject ~/genome_analysis/data/reference_genome/GCF_010120755.1_ASM1012075v1_genomic.fna -query ~/genome_analysis/analyses/01_genome_assembly/assembly.contigs.fasta -out ~/genome_analysis/analyses/05_synteny_blastn/synteny_same_species.tab
